@@ -35,6 +35,15 @@ services:
             - .:/usr/src/app
             - /usr/src/app/node_modules
         restart: unless-stopped
+    mongodb:
+        image: mongo:5.0
+        ports:
+        - 9777:9777
+        volumes:
+        - ~/apps/mongo:/data/db
+        environment:
+        - MONGO_INITDB_ROOT_USERNAME=szymekk
+        - MONGO_INITDB_ROOT_PASSWORD=test1234
 
 networks:
     nesjs-network:
