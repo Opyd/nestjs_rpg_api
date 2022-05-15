@@ -3,6 +3,7 @@ import { ConfigModule } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
 import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
+import { RacesModule } from './races/races.module';
 
 @Module({
   imports: [
@@ -12,6 +13,7 @@ import { UsersModule } from './users/users.module';
       'mongodb+srv://bebzon:kOBeewjnS7LHX5Lg@cluster0.e5qqc.mongodb.net/rpg?retryWrites=true&w=majority',
     ),
     ConfigModule.forRoot({}),
+    RacesModule,
   ],
   controllers: [],
   providers: [],
