@@ -1,11 +1,15 @@
 import { Injectable } from '@nestjs/common';
+import { InjectModel } from '@nestjs/mongoose';
+import { Model } from 'mongoose';
 import { CreateRaceDto } from './dto/create-race.dto';
 import { UpdateRaceDto } from './dto/update-race.dto';
+import { Race, RaceDocument } from './schemas/races.schema';
 
 @Injectable()
 export class RacesService {
-  create(createRaceDto: CreateRaceDto) {
-    return 'This action adds a new race';
+  constructor(@InjectModel(Race.name) private raceModel: Model<RaceDocument>) {}
+  async create(createRaceDto: CreateRaceDto) {
+    return new this.raceModel(createRaceDto).save();
   }
 
   findAll() {

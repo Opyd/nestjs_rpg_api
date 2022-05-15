@@ -12,11 +12,17 @@ export class UsersService {
     return new this.userModel(createUserDto).save();
   }
 
-  findAll() {
-    return `This action returns all users`;
+  async findAll() {
+    return this.userModel.find({}).exec();
   }
 
-  findOneById(id: string) {
+  /**
+   *
+   * @param id szukanego użytkwonika (unikalne)
+   * @returns {User} obiekt znalezionego uzytkownika
+   */
+
+  async findOneById(id: string) {
     return this.userModel.findById(id).exec();
   }
 
@@ -26,15 +32,17 @@ export class UsersService {
    * @returns {User} Zwarca użytkownika
    */
 
-  findOne(email: string) {
+  async findOne(email: string) {
     return this.userModel.findOne({ email: email }).exec();
   }
 
-  update(id: number, updateUserDto: UpdateUserDto) {
-    return `This action updates a #${id} user`;
+  async update(id: string, updateUserDto: UpdateUserDto) {
+    return this.userModel
+      .findByIdAndUpdate({ id }, { $set: updateUserDto }, { new: true })
+      .exec();
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} user`;
+  async remove(id: string) {
+    return this.userModel.findByIdAndDelete(id).exec();
   }
 }
