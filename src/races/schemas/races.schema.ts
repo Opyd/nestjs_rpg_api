@@ -1,4 +1,4 @@
-import { Prop, Schema } from '@nestjs/mongoose';
+import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { v4 as uuidv4 } from 'uuid';
 
 export type RaceDocument = Race & Document;
@@ -22,3 +22,5 @@ export class Race {
   @Prop()
   description: string;
 }
+
+export const RaceSchema = SchemaFactory.createForClass(Race);
