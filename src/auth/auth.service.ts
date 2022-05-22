@@ -36,7 +36,7 @@ export class AuthService {
 
   async signin(dto: LoginDto) {
     //znalezenie użytkownika
-    const user = await this.userService.findOne(dto.email);
+    const user = await this.userService.findOneByEmail(dto.email);
 
     if (!user) {
       throw new ForbiddenException('Credentials incorrect');
