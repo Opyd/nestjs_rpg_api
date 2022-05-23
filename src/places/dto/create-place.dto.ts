@@ -1,14 +1,18 @@
 import { IsNotEmpty, IsString, IsUrl } from 'class-validator';
 
-export class CreateRaceDto {
+export class CreatePlaceDto {
   @IsString()
   @IsNotEmpty()
   name: string;
 
-  @IsUrl()
+  @IsString()
   @IsNotEmpty()
-  iconLink: string;
+  imageLink: string;
 
   @IsString()
-  description: string;
+  @IsNotEmpty()
+  type: string;
+
+  @IsString()
+  details: string;
 }

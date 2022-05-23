@@ -21,11 +21,7 @@ export class RacesService {
   }
 
   update(id: string, updateRaceDto: UpdateRaceDto) {
-    return this.raceModel.findByIdAndUpdate(
-      { id },
-      { $set: updateRaceDto },
-      { new: true },
-    );
+    return this.raceModel.findByIdAndUpdate(id, updateRaceDto, { new: true });
   }
 
   remove(id: string) {
