@@ -18,15 +18,7 @@ export class CharactersService {
   }
 
   findAll() {
-    const Race = mongoose.model('Race', RaceSchema);
-    //const Location = mongoose.model('Place', PlaceSchema);
-    return this.characterModel
-      .find()
-      .populate({
-        path: 'race',
-        model: Race,
-      })
-      .exec();
+    return this.characterModel.find().populate('location');
   }
 
   findOne(id: string) {
