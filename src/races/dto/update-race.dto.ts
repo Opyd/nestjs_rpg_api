@@ -8,5 +8,5 @@ export class UpdateRaceDto {
   description: string;
 
   @IsString()
-  icon: string;
+  iconLink: string;
 }

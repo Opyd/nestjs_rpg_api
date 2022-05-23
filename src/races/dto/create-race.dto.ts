@@ -7,7 +7,7 @@ export class CreateRaceDto {
 
   @IsString()
   @IsNotEmpty()
-  icon: string;
+  iconLink: string;
 
   @IsString()
   description: string;
