@@ -13,7 +13,7 @@ export class RacesService {
   }
 
   findAll() {
-    return this.raceModel.find({}).exec();
+    return this.raceModel.find({}).populate('race', this.raceModel).exec();
   }
 
   findOne(id: string) {

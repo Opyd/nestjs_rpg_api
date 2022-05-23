@@ -1,4 +1,5 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
+import mongoose from 'mongoose';
 
 export type RaceDocument = Race & Document;
 
@@ -15,3 +16,5 @@ export class Race {
 }
 
 export const RaceSchema = SchemaFactory.createForClass(Race);
+
+//export const RaceModel = mongoose.model('race', RaceSchema);

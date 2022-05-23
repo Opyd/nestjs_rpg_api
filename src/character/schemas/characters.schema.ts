@@ -1,6 +1,6 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Race } from 'src/races/schemas/races.schema';
-import mongoose from 'mongoose';
+import mongoose, { Model } from 'mongoose';
 import { Place } from 'src/places/schemas/places.schema';
 
 export type CharacterDocument = Character & Document;
@@ -17,7 +17,7 @@ export class Character {
   })
   type: string;
 
-  @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'race' })
+  @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'Race' })
   race: Race;
 
   @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'place' })
