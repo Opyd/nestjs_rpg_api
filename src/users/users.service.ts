@@ -32,7 +32,7 @@ export class UsersService {
    * @returns {User} Zwarca użytkownika
    */
 
-  async findOne(email: string) {
+  async findOneByEmail(email: string) {
     return this.userModel.findOne({ email: email }).exec();
   }
 
