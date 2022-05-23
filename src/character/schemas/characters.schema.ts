@@ -20,7 +20,7 @@ export class Character {
   @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'Race' })
   race: Race;
 
-  @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'place' })
+  @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'Place' })
   location: Place;
 
   @Prop()
