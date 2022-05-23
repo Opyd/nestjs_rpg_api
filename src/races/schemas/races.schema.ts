@@ -1,18 +1,10 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { v4 as uuidv4 } from 'uuid';
+import mongoose from 'mongoose';
 
 export type RaceDocument = Race & Document;
 
 @Schema({ timestamps: false })
 export class Race {
-  @Prop({
-    type: String,
-    default: function genUUID() {
-      return uuidv4();
-    },
-  })
-  _id: string;
-
   @Prop({ required: true })
   name: string;
 
@@ -24,3 +16,5 @@ export class Race {
 }
 
 export const RaceSchema = SchemaFactory.createForClass(Race);
+
+//export const RaceModel = mongoose.model('race', RaceSchema);

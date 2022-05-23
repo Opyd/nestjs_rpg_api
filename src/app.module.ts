@@ -5,6 +5,7 @@ import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
 import { RacesModule } from './races/races.module';
 import { PlacesModule } from './places/places.module';
+import { CharacterModule } from './character/character.module';
 
 @Module({
   imports: [
@@ -16,6 +17,7 @@ import { PlacesModule } from './places/places.module';
     ConfigModule.forRoot({}),
     RacesModule,
     PlacesModule,
+    CharacterModule,
   ],
   controllers: [],
   providers: [],
