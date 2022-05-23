@@ -13,18 +13,22 @@ export class RacesService {
   }
 
   findAll() {
-    return `This action returns all races`;
+    return this.raceModel.find({}).exec();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} race`;
+  findOne(id: string) {
+    return this.raceModel.findById(id).exec();
   }
 
-  update(id: number, updateRaceDto: UpdateRaceDto) {
-    return `This action updates a #${id} race`;
+  update(id: string, updateRaceDto: UpdateRaceDto) {
+    return this.raceModel.findByIdAndUpdate(
+      { id },
+      { $set: updateRaceDto },
+      { new: true },
+    );
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} race`;
+  remove(id: string) {
+    return this.raceModel.findByIdAndDelete(id).exec();
   }
 }
