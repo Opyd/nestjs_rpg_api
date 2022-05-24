@@ -18,7 +18,6 @@ export class JwtStrategy extends PassportStrategy(Strategy, 'jwt') {
       payload,
     });
     const user = await this.userService.findOneById(payload.sub);
-    delete user.password;
     return user;
   }
 }
