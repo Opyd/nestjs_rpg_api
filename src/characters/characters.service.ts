@@ -1,12 +1,11 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import { Mode } from 'fs';
-import mongoose, { Model } from 'mongoose';
-import { Place, PlaceSchema } from 'src/places/schemas/places.schema';
-import { Race, RaceDocument, RaceSchema } from 'src/races/schemas/races.schema';
+import { Model } from 'mongoose';
+import { Place } from 'src/places/schemas/places.schema';
+import { Race } from 'src/races/schemas/races.schema';
 import { CreateCharacterDto } from './dto/create-character.dto';
 import { UpdateCharacterDto } from './dto/update-character.dto';
-import { Character, CharacterDocument } from './schemas/characters.schema';
+import { Character, CharacterDocument } from './schemas/character.schema';
 
 @Injectable()
 export class CharactersService {
@@ -21,7 +20,6 @@ export class CharactersService {
   }
 
   findAll() {
-    //const Location = mongoose.model('Place', PlaceSchema);
     return this.characterModel.find().populate(['race', 'location']).exec();
   }
 
