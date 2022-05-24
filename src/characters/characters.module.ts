@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { CharactersService } from './characters.service';
-import { CharacterController } from './character.controller';
+import { CharacterController } from './characters.controller';
 import { MongooseModule } from '@nestjs/mongoose';
 import { Character, CharacterSchema } from './schemas/characters.schema';
 import { Race, RaceSchema } from 'src/races/schemas/races.schema';
