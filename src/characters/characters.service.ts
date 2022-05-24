@@ -24,7 +24,7 @@ export class CharactersService {
   findAll() {
     return this.characterModel
       .find()
-      .populate(['race', 'location', 'item'])
+      .populate(['race', 'location', 'items'])
       .exec();
   }
 

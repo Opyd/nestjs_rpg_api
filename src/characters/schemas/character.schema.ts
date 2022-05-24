@@ -24,8 +24,11 @@ export class Character {
   @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'Place' })
   location: Place;
 
-  @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'Item' })
-  item: Item;
+  @Prop({
+    required: true,
+    type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Item' }],
+  })
+  items: Item[];
 
   @Prop()
   description: string;
