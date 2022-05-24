@@ -8,6 +8,7 @@ import { PlacesModule } from './places/places.module';
 import { CharacterModule } from './characters/characters.module';
 import { ItemsModule } from './items/items.module';
 import { EventsModule } from './events/events.module';
+import { CampaignsModule } from './campaigns/campaigns.module';
 
 @Module({
   imports: [
@@ -22,6 +23,7 @@ import { EventsModule } from './events/events.module';
     CharacterModule,
     ItemsModule,
     EventsModule,
+    CampaignsModule,
   ],
   controllers: [],
   providers: [],
