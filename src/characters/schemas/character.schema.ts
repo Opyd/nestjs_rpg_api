@@ -2,6 +2,7 @@ import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Race } from 'src/races/schemas/races.schema';
 import mongoose from 'mongoose';
 import { Place } from 'src/places/schemas/places.schema';
+import { Item } from 'src/items/schemas/item.schema';
 
 export type CharacterDocument = Character & Document;
 
@@ -22,6 +23,12 @@ export class Character {
 
   @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'Place' })
   location: Place;
+
+  @Prop({
+    required: true,
+    type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Item' }],
+  })
+  items: Item[];
 
   @Prop()
   description: string;

@@ -1,16 +1,25 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import mongoose from 'mongoose';
 import { Character } from 'src/characters/schemas/character.schema';
+import { Item } from 'src/items/schemas/item.schema';
 import { Place } from 'src/places/schemas/places.schema';
+import { User } from 'src/users/schemas/users.schema';
 
-export type EventDocument = Event & Document;
+export type CampaignDocument = Campaign & Document;
 
 @Schema({ timestamps: false })
-export class Event {
+export class Campaign {
   @Prop({
     required: true,
   })
   name: string;
+
+  @Prop({
+    required: true,
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
+  })
+  owner: User;
 
   @Prop({
     required: true,
@@ -24,11 +33,11 @@ export class Event {
   })
   characters: Character[];
 
-  @Prop({
-    required: true,
-    enum: ['positive', 'negative', 'neutral'],
-  })
-  type: string;
+  @Prop({ type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Event' }] })
+  events: Event[];
+
+  @Prop({ type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Item' }] })
+  items: Item[];
 
   @Prop({
     required: true,
@@ -41,4 +50,4 @@ export class Event {
   imageLink: string;
 }
 
-export const EventSchema = SchemaFactory.createForClass(Event);
+export const CampaignSchema = SchemaFactory.createForClass(Campaign);
