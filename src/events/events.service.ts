@@ -24,7 +24,10 @@ export class EventsService {
   }
 
   findOne(id: string) {
-    return this.eventModel.findById(id).exec();
+    return this.eventModel
+      .findById(id)
+      .populate(['locations', 'characters'])
+      .exec();
   }
 
   update(id: string, updateEventDto: UpdateEventDto) {

@@ -30,7 +30,10 @@ export class CampaignsService {
   }
 
   findOne(id: string) {
-    return this.campaignModel.findById(id).exec();
+    return this.campaignModel
+      .findById(id)
+      .populate(['locations', 'characters', 'events', 'items'])
+      .exec();
   }
 
   update(id: string, updateCampaignDto: UpdateCampaignDto) {

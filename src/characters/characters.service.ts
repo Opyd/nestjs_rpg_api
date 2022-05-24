@@ -29,7 +29,10 @@ export class CharactersService {
   }
 
   findOne(id: string) {
-    return this.characterModel.findById(id).exec();
+    return this.characterModel
+      .findById(id)
+      .populate(['race', 'location', 'items'])
+      .exec();
   }
 
   update(id: string, updateCharacterDto: UpdateCharacterDto) {

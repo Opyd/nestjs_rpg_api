@@ -13,7 +13,7 @@ export class UsersService {
   }
 
   async findAll() {
-    return this.userModel.find({}).exec();
+    return this.userModel.find().exec();
   }
 
   /**

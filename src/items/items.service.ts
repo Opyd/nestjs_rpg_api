@@ -22,7 +22,7 @@ export class ItemsService {
   }
 
   findOne(id: string) {
-    return this.itemModel.findById(id).exec();
+    return this.itemModel.findById(id).populate('location').exec();
   }
 
   update(id: string, updateItemDto: UpdateItemDto) {

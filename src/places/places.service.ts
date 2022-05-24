@@ -15,7 +15,7 @@ export class PlacesService {
   }
 
   findAll() {
-    return this.placeModel.find({}).exec();
+    return this.placeModel.find().exec();
   }
 
   findOne(id: string) {
