@@ -10,10 +10,11 @@ export class CreateEventDto {
   @IsNotEmpty()
   type: string;
 
+  @IsNotEmpty()
   characters: mongoose.Schema.Types.ObjectId[];
 
   @IsNotEmpty()
-  location: mongoose.Schema.Types.ObjectId[];
+  locations: mongoose.Schema.Types.ObjectId[];
 
   @IsString()
   description: string;

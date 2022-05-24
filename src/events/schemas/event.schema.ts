@@ -16,9 +16,12 @@ export class Event {
     required: true,
     type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Place' }],
   })
-  location: Place[];
+  locations: Place[];
 
-  @Prop({ type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Charater' }] })
+  @Prop({
+    required: true,
+    type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Character' }],
+  })
   characters: Character[];
 
   @Prop({
