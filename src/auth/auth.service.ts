@@ -23,7 +23,7 @@ export class AuthService {
         password: hash,
       });
 
-      return this.signToken(user._id, user.email);
+      return this.signToken(user._id.toString(), user.email);
     } catch (error) {
       //błąd mongodb o duplikatach (z docsów)
       if (error.code == 11000) {
