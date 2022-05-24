@@ -1,4 +1,20 @@
-import { PartialType } from '@nestjs/mapped-types';
-import { CreateItemDto } from './create-item.dto';
+import { IsString, IsUrl } from 'class-validator';
+import mongoose from 'mongoose';
 
-export class UpdateItemDto extends PartialType(CreateItemDto) {}
+export class UpdateItemDto {
+  @IsString()
+  name: string;
+  @IsString()
+  quantity: string;
+
+  @IsString()
+  type: string;
+
+  location: mongoose.Schema.Types.ObjectId[];
+
+  @IsString()
+  weight: string;
+
+  @IsUrl()
+  iconLink: string;
+}
