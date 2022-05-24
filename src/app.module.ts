@@ -7,6 +7,7 @@ import { RacesModule } from './races/races.module';
 import { PlacesModule } from './places/places.module';
 import { CharacterModule } from './characters/characters.module';
 import { ItemsModule } from './items/items.module';
+import { EventsModule } from './events/events.module';
 
 @Module({
   imports: [
@@ -20,6 +21,7 @@ import { ItemsModule } from './items/items.module';
     PlacesModule,
     CharacterModule,
     ItemsModule,
+    EventsModule,
   ],
   controllers: [],
   providers: [],
