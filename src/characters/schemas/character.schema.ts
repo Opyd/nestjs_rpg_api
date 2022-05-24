@@ -1,6 +1,6 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Race } from 'src/races/schemas/races.schema';
-import mongoose, { Model } from 'mongoose';
+import mongoose from 'mongoose';
 import { Place } from 'src/places/schemas/places.schema';
 
 export type CharacterDocument = Character & Document;
