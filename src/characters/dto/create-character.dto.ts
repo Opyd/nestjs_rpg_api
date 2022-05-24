@@ -16,6 +16,8 @@ export class CreateCharacterDto {
   @IsNotEmpty()
   location: mongoose.Schema.Types.ObjectId;
 
+  items: mongoose.Schema.Types.ObjectId[];
+
   @IsString()
   description: string;
 
