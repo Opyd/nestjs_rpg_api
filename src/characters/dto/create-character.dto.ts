@@ -30,7 +30,7 @@ export class CreateCharacterDto {
   @IsString()
   alive: string;
 
-  @IsUrl()
+  @IsString()
   @IsNotEmpty()
-  iconLink: string;
+  imageLink: string;
 }

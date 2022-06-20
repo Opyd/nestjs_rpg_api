@@ -20,7 +20,7 @@ export class CreateItemDto {
   @IsString()
   weight: string;
 
-  @IsUrl()
+  @IsString()
   @IsNotEmpty()
-  iconLink: string;
+  imageLink: string;
 }

@@ -18,6 +18,6 @@ export class UpdateCampaignDto {
   @IsString()
   description: string;
 
-  @IsUrl()
-  iconLink: string;
+  @IsString()
+  imageLink: string;
 }

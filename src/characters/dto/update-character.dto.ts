@@ -26,6 +26,6 @@ export class UpdateCharacterDto {
   @IsString()
   alive: string;
 
-  @IsUrl()
-  iconLink: string;
+  @IsString()
+  imageLink: string;
 }

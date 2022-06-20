@@ -15,6 +15,6 @@ export class UpdateItemDto {
   @IsString()
   weight: string;
 
-  @IsUrl()
-  iconLink: string;
+  @IsString()
+  imageLink: string;
 }

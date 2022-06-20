@@ -14,4 +14,5 @@ export class UpdateEventDto {
 
   @IsString()
   description: string;
+
 }

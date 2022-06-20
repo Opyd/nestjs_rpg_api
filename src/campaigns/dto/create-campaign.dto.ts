@@ -24,6 +24,6 @@ export class CreateCampaignDto {
   @IsString()
   description: string;
 
-  @IsUrl()
-  iconLink: string;
+  @IsString()
+  imageLink: string;
 }
