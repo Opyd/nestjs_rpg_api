@@ -14,7 +14,4 @@ export class UpdateEventDto {
 
   @IsString()
   description: string;
-
-  @IsUrl()
-  iconLink: string;
 }

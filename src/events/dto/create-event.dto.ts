@@ -18,7 +18,4 @@ export class CreateEventDto {
 
   @IsString()
   description: string;
-
-  @IsUrl()
-  iconLink: string;
 }

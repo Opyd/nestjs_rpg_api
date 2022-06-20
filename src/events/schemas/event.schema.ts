@@ -35,10 +35,6 @@ export class Event {
   })
   description: string;
 
-  @Prop({
-    required: false,
-  })
-  imageLink: string;
 }
 
 export const EventSchema = SchemaFactory.createForClass(Event);
