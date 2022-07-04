@@ -15,7 +15,7 @@ import { CampaignsModule } from './campaigns/campaigns.module';
     AuthModule,
     UsersModule,
     MongooseModule.forRoot(
-      'mongodb+srv://bebzon:kOBeewjnS7LHX5Lg@cluster0.e5qqc.mongodb.net/rpg?retryWrites=true&w=majority',
+      '', //your local mongodb instance
     ),
     ConfigModule.forRoot({}),
     RacesModule,
